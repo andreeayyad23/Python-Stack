@@ -1,4 +1,4 @@
-for x  in range(0, 151):
+for x  in range(151):
     print(x)
 
 for z in range(5, 1005, 5):
@@ -17,7 +17,7 @@ for y in range(1, 101):
         print(y)
 
 sum = 0
-for a in range (0, 50001):
+for a in range (50001):
     if a % 2 !=0:
         sum =sum+a
 
