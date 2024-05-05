@@ -2,7 +2,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def show_table():
+def table():
     users = [
    {'first_name' : 'Michael' , 'last_name' : 'Choi' },
    {'first_name' : 'John' , 'last_name' : 'Supsupin' },
