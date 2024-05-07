@@ -16,7 +16,7 @@ def checkout():
     total = int(apple)+int(strawberry)+int(raspberry)
     print (request.form)
     print (f"Charging,{firstname} {lastname} for {total} fruits")
-    return render_template("checkout.html",firstname = firstname ,lastname=("lastname"), studentid=studentid, 
+    return render_template("checkout.html",firstname = firstname ,lastname=lastname, studentid=studentid, 
                            apple=int(apple),strawberry=int(strawberry),raspberry=int(raspberry), total=int(total))
 
 
@@ -26,4 +26,4 @@ def fruits():
     return render_template("fruits.html")
 
 if __name__=="__main__":   
-    app.run(debug=True)    
+    app.run(debug=True)   
