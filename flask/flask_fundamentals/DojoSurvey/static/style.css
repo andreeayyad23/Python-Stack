@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    color: rgb(0, 151, 210);
+
+}
+
+
+
+input.btn-submit{
+    background-color: skyblue;
+    color: brown;
+    width: 70px;
+    box-shadow: 2px 2px;
+    margin-left: 250px;
+    margin-top: 25px;
+}
+
+.form-label{
+    color: rgb(0, 151, 210);
+}
+
+.card-text{
+    color: rgb(0, 151, 210);
+}
+
