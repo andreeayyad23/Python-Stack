@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+            <div class="counterbox">
+                <h1>Counter</h1>
+                <h3>You have visited this page {{request.session.counter}} times</h3>
+                <div class="row">
+                    <form action='/addtwo'>
+                        <input type="submit" name="" value="Add Two">
+                    </form>
+                    <form action='/destroy_session'>
+                        <input class="second-input"  type="submit" name="" value="Reset">
+                    </form>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
