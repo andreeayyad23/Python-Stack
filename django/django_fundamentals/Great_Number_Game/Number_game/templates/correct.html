@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Your Answer</title>
+</head>
+</head>
+<body>
+    <div class="Header">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking about a number between 1 and 100.</p>
+        <p>Take a guess!</p>
+        <div class="container">
+            <h4 class="show-green"> Correct! {{ request.session.guess_number }} was the number I was thinking of!</h4>
+                <a href="/" class="btn-secondary">Play Again</a>
+        </div>
+    </div>
+</body>
+</html>
