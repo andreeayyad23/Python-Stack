@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="num-gold">
+            <label for="gold" class="gold_num">Your Gold:</label>
+            <input type="hidden" name="gold"/>{{gold}}
+        </div>
+
+        <div class="boxes">
+            <div class="boxes-side">
+                <h3>Farm</h3>
+                <h5>(earns 10-20 gold)</h5>
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="farm"/>
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+
+            <div class="boxes-side">
+                <h3>Cave</h3>
+                <h5>(earns 10-20 gold)</h5>
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="cave"/>
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+
+            <div class="boxes-side">
+                <h3>House</h3>
+                <h5>(earns 10-20 gold)</h5>
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="house"/>
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+
+            <div class="boxes-side">
+                <h3>Quest</h3>
+                <h5>(earns/ takes 0-50 gold)</h5>
+                <form action="/process_money" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quest"/>
+                    <button type="submit">Find Gold!</button>
+            </div>
+        </div>
+
+        <div class="activities">
+            <p>Activities:</p>
+            <div name=" activity" class="active">
+                {% for x in activities %}
+                    {% if 'failed' in x %}
+                    <p style="color: black;">
+                        {{x}}
+                    </p>  
+                    {% else %}
+                    <p style="color: #f1e10f;">
+                        {{x}}
+                    </p> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+            <form action="/reset" method="post">
+            {% csrf_token %}
+            <a href="/reset" role ="button">reset</a>
+            </form>
+    </div>
+</body>
+</html>
