@@ -23,7 +23,7 @@
                 <h5>(earns 10-20 gold)</h5>
                 <form action="/process_money" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="farm"/>
+                    <input type="hidden" name="location" value="Farm"/>
                     <button type="submit">Find Gold!</button>
                 </form>
             </div>
@@ -33,7 +33,7 @@
                 <h5>(earns 10-20 gold)</h5>
                 <form action="/process_money" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="cave"/>
+                    <input type="hidden" name="location" value="Cave"/>
                     <button type="submit">Find Gold!</button>
                 </form>
             </div>
@@ -43,7 +43,7 @@
                 <h5>(earns 10-20 gold)</h5>
                 <form action="/process_money" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="house"/>
+                    <input type="hidden" name="location" value="House"/>
                     <button type="submit">Find Gold!</button>
                 </form>
             </div>
@@ -53,7 +53,7 @@
                 <h5>(earns/ takes 0-50 gold)</h5>
                 <form action="/process_money" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="quest"/>
+                    <input type="hidden" name="location" value = "Quest"/>
                     <button type="submit">Find Gold!</button>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <div name=" activity" class="active">
                 {% for x in activities %}
                     {% if 'failed' in x %}
-                    <p style="color: black;">
+                    <p style="color: rgb(255, 255, 255);">
                         {{x}}
                     </p>  
                     {% else %}
