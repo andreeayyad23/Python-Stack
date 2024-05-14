@@ -1,0 +1,59 @@
+#Q1
+
+from users_app.models import Users
+
+#Q2 
+Users.objects.create(first_name="saeed", last_name="Abu Qtaish", email_address="said@gmail.com",age=27)
+
+
+Users.objects.create(first_name="Andree", last_name="Ayyad",email_address="Andree@gmail.com",age=23)
+ 
+ Users.objects.create(first_name="Mustafa",last_name="Taha",
+ email_address="mustafa.taha.mu95@gmail.com",age=29)
+
+
+#Q3 
+users=Users.objects.all()
+print(users.values())
+
+
+
+
+#Q4 
+last_user= Users.objects.last() 
+print(last_users.__dict__)
+
+#Q5 
+first_user = Users.objects.first()
+print(first_user.__dict__)
+
+#Q6 
+user_3 = Users.objects.get(id=3)
+
+ user_3.last_name = 'Pancakes'
+
+ user_3.save()
+#Q7 
+user_2 = Users.objects.get(id=2)
+
+ user_2.delete()
+#Q8 
+sort_users = Users.objects.order_by('first_name')
+sort_users.values()
+
+#Q9
+sort_users_desc = Users.objects.order_by('-first_name')
+sort_users_desc.values()
+
+
+
+
+
+
+
+
+
+
+
+
+
