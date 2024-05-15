@@ -1,0 +1,72 @@
+.container{
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+.header{
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+}
+
+
+.dojo , .ninja{
+    background-color: rgb(255, 93, 93);
+    height: 200px;
+    width: 400px;
+    border-radius: 15px;
+}
+
+h3{
+    color: black;
+    font-size: 1.5rem;
+    text-align: start;
+    padding-left: 10px;
+}
+
+.btn-add{
+    height: 30px;
+    width: 100px;
+    margin-top: 7px;
+    border-radius: 20px;
+    border: 2px solid rgb(255, 0, 38);
+    background-color: white;
+}
+
+td{
+    padding-left: 10px;
+}
+
+.button-add{
+    height: 30px;
+    width: 100px;
+    margin-top: 7px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: white;
+    margin-top: 7px;
+    border: 2px solid rgb(255, 0, 38);
+}
+
+.btn-add:hover{
+    box-shadow: 4px 4px 10px lightcoral;
+}
+
+.name-dojo {
+    font-size: 20px;
+}
+.name-ninja{
+    font-size: 15px ;
+}
+ul li{
+    height: 300px;
+    overflow-x: scroll;
+    /* margin-left: 50px ; */
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}

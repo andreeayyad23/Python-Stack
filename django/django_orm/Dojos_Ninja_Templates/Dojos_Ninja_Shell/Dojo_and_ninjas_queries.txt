@@ -1,0 +1,40 @@
+1. from Dojos_Ninja_app.models import *
+
+2. Dojo.objects.create(name="Andree", city="Bethlehem", state="Palestine")
+   Dojo.objects.create(name="Muath", city="Bethlehem", state="Palestine")	
+   Dojo.objects.create(name="Laith", city="Ramallah", state="Palestine")
+
+3. D = Dojo.objects.all()
+   D.delete()
+
+4. Dojo.objects.create(name="Andree", city="Bethlehem", state="Palestine")
+   Dojo.objects.create(name="Muath", city="Bethlehem", state="Palestine")	
+   Dojo.objects.create(name="Laith", city="Ramallah", state="Palestine")
+
+5. first_dojo = Dojo.objects.get(id=4) 
+first_ninja = ninja.objects.create(first_name="Tony", last_name="Robin", dojo_id= "first_dojo")
+second_ninja = ninja.objects.create(first_name="Haron", last_name="Yobin", dojo_id= "first_dojo")
+third_ninja = ninja.objects.create(first_name="York", last_name="Yola", dojo_id= "first_dojo")
+
+6. first_dojo = Dojo.objects.get(id=5) 
+first_ninja = ninja.objects.create(first_name="mark", last_name="rodri", dojo_id= "first_dojo")
+second_ninja = ninja.objects.create(first_name="Rodrigo", last_name="Goes", dojo_id= "first_dojo")
+third_ninja = ninja.objects.create(first_name="Omar", last_name="ademar", dojo_id= "first_dojo")
+
+7.first_dojo = Dojo.objects.get(id=6) 
+first_ninja = ninja.objects.create(first_name="Issac", last_name="royi", dojo_id= "first_dojo")
+second_ninja = ninja.objects.create(first_name="Lour", last_name="Lourd", dojo_id= "first_dojo")
+third_ninja = ninja.objects.create(first_name="Nonar", last_name="sor", dojo_id= "first_dojo")
+
+8. ninja.objects.filter(dojo_id="4").values()
+9. ninja.objects.filter(dojo_id="6").values()
+10. Dojo.objects.last()
+11. we added a new attribute to the Dojo class and then we did the makemigrations and migrate commands, and we set the default value to "old dojo" 
+
+12. from Dojos_Ninja_app.models import *
+
+Dojo.objects.create(name="Haithm", city="England", state="Europe")
+
+
+
+
