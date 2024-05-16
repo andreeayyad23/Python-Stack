@@ -1,0 +1,116 @@
+1... In [1]: from Book_author_app.models import *
+
+2... In [2]: Books.objects.create(title = "C sharp", desc = "C sharp")
+Out[2]: <Books: Books object (1)>
+
+In [3]: Books.objects.create(title = "Java", desc = "Java")
+Out[3]: <Books: Books object (2)>
+
+In [4]: Books.objects.create(title = "Python", desc = "Python")
+Out[4]: <Books: Books object (3)>
+
+In [5]: Books.objects.create(title = "PHP", desc = "PHP")
+Out[5]: <Books: Books object (4)>
+
+In [6]: Books.objects.create(title = "Ruby", desc = "Ruby")
+Out[6]: <Books: Books object (5)>
+
+3...  In [7]: Authors.objects.create(first_name = "Jane", last_name = "Austen")
+Out[7]: <Authors: Authors object (1)>
+
+In [8]: Authors.objects.create(first_name = "Emily", last_name = "Dickinson")
+Out[8]: <Authors: Authors object (2)>
+
+In [9]: Authors.objects.create(first_name = "Fyodor", last_name = "Dostoevsky")
+Out[9]: <Authors: Authors object (3)>
+
+In [10]: Authors.objects.create(first_name = "William", last_name = "Shakespeare")
+Out[10]: <Authors: Authors object (4)>
+
+In [11]: Authors.objects.create(first_name = "Lau", last_name = "Tzu")
+Out[11]: <Authors: Authors object (5)>
+
+exsit()
+we add "note" on models a new attribute in author class we set it as default
+makemigration
+migrate
+
+In [3]: obj.first_name="C#"
+
+In [4]: obj.title="C#"
+
+In [5]: obj.save()
+
+In [6]: name = Authors.objects.get(id=4)
+
+In [7]: name.first_name="Bill"
+
+In [8]: name.save()
+
+In [9]: name = Authors.objects.get(id=1)
+
+In [10]: book1 = Books.objects.get(id=1)
+
+In [11]: book2 = Books.objects.get(id=2)
+
+In [12]: name.book_authors.add(book1)
+
+In [13]: name.book_authors.add(book2)
+
+In [14]: name = Authors.objects.get(id=2)
+
+In [15]: book3 = Books.objects.get(id=3)
+
+In [16]: name.book_authors.add(book1)
+
+In [17]: name.book_authors.add(book2)
+
+In [18]: name.book_authors.add(book3)
+
+In [19]: name = Authors.objects.get(id=3)
+
+In [20]: book4 = Books.objects.get(id=4)
+
+In [21]: name.book_authors.add(book1)
+
+In [22]: name.book_authors.add(book2)
+
+In [23]: name.book_authors.add(book3)
+
+In [24]: name.book_authors.add(book4)
+
+In [25]: name = Authors.objects.get(id= 4)
+
+In [26]: book5 = Books.objects.get(id=5)
+
+In [27]: name.book_authors.add(book1)
+
+In [28]: name.book_authors.add(book2)
+
+In [29]: name.book_authors.add(book3)
+
+In [30]: name.book_authors.add(book4)
+
+In [31]: name.book_authors.add(book5)
+
+In [45]: book3.authors.all().values('id',"first_name")
+Out[45]: <QuerySet [{'id': 2, 'first_name': 'Emily'}, {'id': 3, 'first_name': 'Fyodor'}, {'id': 4, 'first_name': 'Bill'}]>
+
+In [48]: first.book_authors.remove (book3)
+
+In [50]: author_5 = Authors.objects.get(id=5)
+
+In [51]: book2.authors.add (author_5)
+
+In [67]: author_3.book_authors.all().values('title')
+Out[67]: <QuerySet [{'title': 'C#'}, {'title': 'Java'}, {'title': 'Python'}, {'title': 'PHP'}]>
+
+In [69]: book_5 = Books.objects.get(id=5)
+
+In [70]: book_5.authors.all()
+Out[70]: <QuerySet [<Authors: Authors object (4)>]>
+
+In [71]: book_5.authors.all().values('first_name')
+Out[71]: <QuerySet [{'first_name': 'Bill'}]>
+
+
