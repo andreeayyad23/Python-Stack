@@ -1,0 +1,76 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+    margin: 5px 0 auto;
+}
+
+.main_Books {
+    line-height: 1.8;
+
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+.table-add {
+    font-size: large;
+}
+
+.add {
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: start;
+}
+
+.Header{
+    display: flex;
+    width: 1000px;
+    justify-content: space-between;
+}
+
+button.go {
+    margin-left: 20px;
+    margin-top: 50px;
+    color: rgb(0, 0, 0);
+    border-radius: 2%;
+    border-color: rgb(207, 148, 75);
+    background-color: rgb(255, 129, 129);
+    width: 150px;
+    font-size: 1rem;
+    height: 25px;
+}
+
+
+.btn-add{
+    color: rgb(0, 0, 0);
+    border-radius: 2%;
+    border-color: rgb(207, 148, 75);
+    background-color: rgb(255, 129, 129);
+    width: 80px;
+    font-size: 1rem;
+    margin-top: 15px;
+    height: 25px;
+}
+
+table.list {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    width: 400px;
+    text-align: center;
+}
+
+.main_Books {
+    font-size: 1.2rem;
+}
+
+.main_Author{
+    font-size: 1.2rem;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <title>{{author.firstname}} {{author.lastname}} Information</title>
+    <style>
+        p{
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_Author">
+        <div class="info">
+            <h1>Author Name: {{author.firstname}} {{author.lastname}}</h1>
+            <p>ID: <b>{{author.id}}</b></p> 
+            <p>Notes: <b>{{author.notes}}</b></p> 
+            <p>Books: </p> 
+            <ul>
+                {% for book in Authors.Books.all%}
+                <li>{{book.title}}</li>
+                {%endfor%}
+            </ul>
+            <form action="/AddBook_Author/{{author.id}}/" method="post">
+                {% csrf_token%}
+                <select class="select" name="book_id" >
+                    {% for book in Books%}
+                    <option value="{{book.id}}">
+                        {{book.title}}
+                    </option>
+                    {%endfor%}
+                </select>
+                <button class="btn-add">Add</button>
+            </form>
+        </div>
+        <form action="/authors" method="post">
+            {% csrf_token%}
+            <button class ="go">Go back</button>
+        </form>
+    </div>
+</body>
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <title>{{ author.first_name }} {{ author.last_name }} Information</title>
+</head>
+<body>
+    <div class="main_Author">
+        <div class="info">
+            <h1>Author Name: {{ author.first_name }} {{ author.last_name }}</h1>
+            <p>ID: <b>{{ author.id }}</b></p> 
+            <p>Notes: <b>{{ author.notes }}</b></p> 
+            <h3>Books:</h3>
+            <ul>
+                {% for book in author.Books.all %}
+                <li>{{ book.title }}</li>
+                {% endfor %}
+            </ul>
+            {% if books %}
+            <form action="/authors/{{ author.id }}/assign" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <select name="book_id" class="form-control">
+                        {% for book in books %}
+                        <option value="{{ book.id }}">
+                            {{ book.title}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn-add">Add</button>
+            </form>
+            {% endif %}
+        </div>
+    </body>
+    </html>
