@@ -13,6 +13,9 @@
         <a href="/shows"> Go Back</a>
     </div>
     <div class="section">
+        {% for message in messages %}
+    <p style="color:green ;">{{message}}</p>
+    {%endfor%}
         <h1>Add a New Show</h1>
         <form class="create" action="/createShow" method="post">
             {% csrf_token %}

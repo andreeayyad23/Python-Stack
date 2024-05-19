@@ -10,9 +10,13 @@
 </head>
 <body>
     <div class="header">
+        
         <a href="/shows"> Go Back</a>
     </div>
     <div class="section2">
+        {% for message in messages %}
+        <p style="color:red ;">{{message}}</p>
+        {%endfor%}
         <h1>Edit Show {{show.id}}</h1>
         <form class="create" action="/shows/{{show.id}}/update" method="post">
             {% csrf_token %}
