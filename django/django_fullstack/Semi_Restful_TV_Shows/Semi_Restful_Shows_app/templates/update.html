@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semi-Restful TV Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <a href="/shows"> Go Back</a>
+    </div>
+    <div class="section2">
+        <h1>Edit Show {{show.id}}</h1>
+        <form class="create" action="/shows/{{show.id}}/update" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="title">Title:</label><br>
+                <input class="input" type="text" name="title" value="{{show.title}}"  >
+            </div>
+            <div class="create2">
+                <label for="network">Network:
+                <input type="text" name="network" value="{{show.network}}"></label>
+                <label for="release_date">Release date:
+                <input type="date" name="release_date" value="{{show.release_date|date:'Y-m-d'}}"></label>
+            </div>
+            <div>
+                <label for="description">Description :</label><br>
+                <textarea type="text" name="description" rows="4" cols="50">{{show.description}}</textarea>
+            </div>
+            <button class="btn-click">Update</button>
+            <a href="/shows/{{show.id}}">Go To Show</a> 
+        </form>
+    </div>
+</body>
+</html>

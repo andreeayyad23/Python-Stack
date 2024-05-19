@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{{show.title}}</title>
+</head>
+<body>
+    <div class="header">
+        <a href="/shows"> Go Back</a>
+    </div>
+    <div class="section">
+        <h1>TV Show {{show.id}}</h1>
+        <table class="table-show">
+            <tr>
+                <th>Title</th>
+                <td>{{show.title}}</td>
+            </tr>
+            <tr>
+                <th>Network</th>
+                <td>{{show.network}}</td>
+            </tr>
+            <tr>
+                <th>Release Date</th>
+                <td>{{show.release_date}}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{show.description}}</td>
+            </tr>
+            <tr>
+                <th>Last Updated</th>
+                <td>{{show.updated_at}}</td>
+            </tr>
+
+        </table>
+            <a href="/delete/{{show.id}}">Delete</a>
+            <a href="/shows/{{show.id}}/edit">Edit</a>
+        </div>
+    </div>
+    
+</body>
+</html>
