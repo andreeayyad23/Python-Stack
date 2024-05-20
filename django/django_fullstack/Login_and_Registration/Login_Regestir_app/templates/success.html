@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <h1 class="Welcome">Success!, Welcome {{user.firstname}} {{user.lastname}}</h1>
+            <h3 class="Successing">Successfully! Registered (or logged in)</h3>
+            <a href="/logout">log Out</a>
+        </div>
+    </div>
+</body>
+</html>
