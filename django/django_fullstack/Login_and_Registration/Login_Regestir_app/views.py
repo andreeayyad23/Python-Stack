@@ -10,7 +10,7 @@ def registration(request):
         errors = User.objects.registration_validator(request.POST)
         if len(errors) > 0:
             for key, value in errors.items():
-                messages.error(request, value)
+                messages.error(request, value, extra_tags=key)
             return redirect('/')
         else:
             _hash = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
@@ -33,7 +33,7 @@ def login(request):
         errors = User.objects.login_validator(request.POST)
         if len(errors) > 0:
             for key, value in errors.items():
-                messages.error(request, value)
+                messages.error(request, value, extra_tags=key)
             return redirect('/')
         else:
             log_user=User.objects.get(email=request.POST['email'])
