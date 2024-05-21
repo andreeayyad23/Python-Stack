@@ -1,0 +1,45 @@
+div#main{
+    padding-left: 15px;
+}
+
+h1#head{
+    display: inline-block;
+    margin-right: 200px;
+    vertical-align: top;
+}
+
+#logout{
+    display:inline-block;
+}
+
+div.comment{
+    padding-left: 20px;
+    margin-top: 20px;
+    color: rgb(255, 0, 0);
+}
+
+p.post{
+    font-size: 20px;
+}
+
+div#top_right{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+p#by{
+    font-style: italic;
+    font-size: 12px;
+}
+
+.btn{
+    color: black;
+    background-color: #2b78e4;
+    width:150px;
+    border: black 2px solid;
+    box-shadow: 4px 4px solid black;
+}
+
+a {
+    color: royalblue;
+}

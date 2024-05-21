@@ -1,0 +1,38 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#create_user{
+    margin: 5px;
+}
+
+#login_user{
+    margin: 5px;
+}
+
+
+div#reg{
+    display: inline-block;
+    width: 40%;
+}
+
+div#login{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+
+
+.btn{
+    color: black;
+    background-color: #2b78e4;
+    width:150px;
+    border: black 2px solid;
+    box-shadow: 4px 4px solid black;
+}
+
+a {
+    color: royalblue;
+}
