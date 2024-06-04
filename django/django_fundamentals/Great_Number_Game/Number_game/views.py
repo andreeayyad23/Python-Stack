@@ -12,7 +12,7 @@ def index(request):
 
 def process(request):
     request.session['guess_number'] = request.POST['guess']
-
+    print(request.session['number'])
     if int(request.session['guess_number']) == int(request.session['number']):
         return redirect('/correct')
 

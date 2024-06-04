@@ -5,6 +5,12 @@ from .models import *
 def index(request):
     return render(request, "login.html")
 
+#This function will do this ....
+#Outputs:
+#Input:
+# Developer name:
+#Email:
+#snake conventaion   create_emp() CreateEmployee
 def registration(request):
     if request.method=='POST':
         errors = User.objects.registration_validator(request.POST)

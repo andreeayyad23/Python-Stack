@@ -1,0 +1,66 @@
+* {
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+}
+
+h1 {
+    padding-top: 25px;
+}
+
+.col-1,.col-2 {
+    width: 25%;
+}
+
+
+.Register, .Post {
+    border: 2px solid rgb(255, 94, 94);
+    border-width: 5px;
+    text-align: start;
+    padding-left: 5px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+
+}
+
+.fname {
+    margin-top: 20px;
+}
+
+.Date{
+    margin-top: 20px;
+}
+
+.lname {
+    margin-top: 20px;
+}
+
+.email {
+    margin-top: 20px;
+}
+
+.password {
+    margin-top: 20px;
+}
+
+.confirmPassword {
+    margin-top: 20px;
+}
+
+.button {
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 2.5px;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 94, 94);
+}
+
+h3.Successing {
+    color: green;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Movies</h1>
+    <h2>Choose Any Movie:</h2>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{% url 'movie_detail' _id=movie.id %}">{{ movie.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

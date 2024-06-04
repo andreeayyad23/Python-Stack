@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registeration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-1">
+            <form class="Register" action="/registration" method="post">
+                {% csrf_token %}
+                <h1>Registeration</h1>
+                <div class="fname">
+                    <label for="name" name="Fname">First Name:</label>
+                    <input type="text" name="firstname" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "firstname" %}
+                        <li{% if firstname %} class="{{ firstname }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+                <div class="lname">
+                    <label for="name" name="Lname">Last Name:</label>
+                    <input type="text" name="lastname" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "lname" %}
+                        <li{% if lname %} class="{{ lname }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+                <div class="date">
+                    <label class="form-label">Date of Birth:</label>
+                    <input name="birth_date" type="date" class="Date" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "birth_date" %}
+                        <li{% if birth_date %} class="{{ birth_date }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <div class="email">
+                    <label for="name" name="Email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "email" %}
+                        <li{% if email %} class="{{ email }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <div class="password">
+                    <label for="password" name="Password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "password" %}
+                        <li{% if password %} class="{{ password }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <div class="confirmPassword">
+                    <label for="password" name="Password">Confirm Password:</label>
+                    <input type="password" name="confirmPW" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "password" %}
+                        <li{% if password %} class="{{ password }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                
+                <div>
+                    <button type="submit" class="button">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- <div class="msg">
+            {% for msg in messages %}
+                <li>{{msg}}</li></small>
+            {% endfor %} 
+        </div> -->
+        <div class="col-2">
+            <form class="Post" action="/login" method="POST">
+                <h1>Login</h1>
+                {% csrf_token %}
+                <div class="email">
+                    <label for="name" name="Email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "login_email" %}
+                        <li{% if login_email %} class="{{ login_email }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+
+                <div class="password">
+                    <label for="password" name="Password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        {% if message.extra_tags == "login" %}
+                        <li{% if login %} class="{{ login }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+
+                <div>
+                    <button type="submit" class="button">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

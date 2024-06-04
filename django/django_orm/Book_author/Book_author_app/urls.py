@@ -10,9 +10,7 @@ urlpatterns = [
    
     path('authors',views.author),
     path('AddAuthor', views.AddAuthor),
-    path('authors/<int:author_id>/', views.InfoAuthor),
-    path('delete_author/<int:author_id>/', views.delete_author, name='delete_author'),
-    path('authors/<int:author_id>/assign', views.assign_author),
-
-
+    path('authors/<int:author_id>', views.InfoAuthor),
+    path('delete_author/<int:author_id>', views.delete_author, name='delete_author'),
+    path('AddBook_Author/<int:author_id>', views.AddBook_Author),
     ]

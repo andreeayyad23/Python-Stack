@@ -71,7 +71,7 @@
                 {% endfor %}
             </ul>
             {% if books %}
-            <form action="/authors/{{ author.id }}/assign" method="post">
+            <form action="/authors/{{ author.id }}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     <select name="book_id" class="form-control">

@@ -66,8 +66,8 @@ def AddAuthor_Book(request, book_id):
     return redirect('info_book', book_id=book_id)
 
 
-def assign_author(request, author_id):
-    book = Books.objects.get(id=request.POST['book_id'])
-    author = Authors.objects.get(id=author_id)
-    book.authors.add(author)
-    return redirect(f'/authors/{author_id}')
+def AddBook_Author(request, author_id):
+    _thisAuthor=Authors.objects.get(id=author_id)
+    _thisBook=Books.objects.get(id=request.POST['book_id'])
+    _thisAuthor.book_authors.add(_thisBook)
+    return redirect('authors',author_id)

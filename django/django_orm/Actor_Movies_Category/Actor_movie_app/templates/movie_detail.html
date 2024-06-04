@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>{% if movie %}{{ movie.title }}{% else %}Movie Not Found{% endif %}</title>
+</head>
+<body>
+    {% if movie %}
+        <h1>{{ movie.title }}</h1>
+        <p>{{ movie.description }}</p>
+        <img src="{{ movie.url_image }}" alt="{{ movie.title }}">
+        <p>Category: {{ movie.category.name }}</p>
+        <h2>Actors:</h2>
+        <ul>
+            {% for actor in actors %}
+                <li>{{ actor.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

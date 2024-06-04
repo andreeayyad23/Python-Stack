@@ -61,5 +61,3 @@ def delete_comment(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     comment.delete()
     return redirect('/wall')
-    
-
