@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+    <!-- Assuming Bootstrap CSS is included for styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white">Welcome {{ user.firstname }} {{ user.lastname }}!</a>
+            <div class="d-flex">
+                <a href="/dashboard" class="btn btn-outline-light">Dashboard</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container bg-light">
+        <div class="container d-flex justify-content-between bg-light p-5">
+            <form class="col-md-4" action="/add_magazine" method="post">
+                {% csrf_token %}
+                <div class="col my-4">
+                    <label class="form-label">Title:</label>
+                    <input name="title" type="text" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label class="form-label">Description:</label>
+                    <textarea name="desc" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary my-4">Submit</button>
+            </form>
+            <div class="col-md-4">
+                {% for message in messages %}
+                    <small class="text-danger">
+                        <li>{{ message }}</li>
+                    </small>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Assuming Bootstrap JS and dependencies are included -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

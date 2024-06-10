@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Welcome, {{ user.firstname }} {{ user.lastname }}</h1>
+            <div class="links">
+                <a id="link" href="/magazines/new" class="btn btn-primary">Add Magazine</a>
+                <a href="/user/account" class="btn btn-secondary">Account</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>{{ magazine.title }}</h1>
+            <p>Added by {{ magazine.uploaded_py.firstname }} {{ magazine.uploaded_py.lastname }}</p>
+            <p>Description: {{ magazine.desc }}</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
