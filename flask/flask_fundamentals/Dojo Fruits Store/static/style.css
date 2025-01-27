@@ -1,0 +1,47 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.firstRow {
+    width: 30%;
+    justify-content: space-around;
+}
+
+h3.question {
+    text-decoration-line: underline;
+    padding-top: 50px;
+}
+
+#nums {
+    margin-left: 60px;
+    font-size: 1.3rem;
+}
+
+th.Quantity {
+    padding-left: 60px;
+
+}
+
+table {
+    border: 3px black solid;
+    width: 300px;
+}
+
+th,tr{
+    font-size: 1.3rem;
+    border: 3px black solid;
+}
+
+.info {
+    text-decoration-line: underline;
+    padding-top: 30px;
+}
+
+.emptyArea{
+   display: flex;
+}

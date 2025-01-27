@@ -1,82 +1,68 @@
+# test.py
+
+# Print initial messages
 print("Hello World!")
+print("Hello Python")
+print(42)
 
-x = "Hello Python"
-print(x)
-y = 42
-print(y)
-
+# Variable declarations and type checking
 name = "Andree"
-print(type(name))
-#print ("Hello "+name)
+print(type(name))  # Output: <class 'str'>
 
+# String concatenation and formatting
 first_name = "Hello"
 last_name = "World!"
-full_name = first_name + " "+ last_name
-print("Hello "+full_name)
+full_name = f"{first_name} {last_name}"
+print(full_name)  # Output: Hello World!
 
+# Age calculation and conversion
 age = 23
-age =+ 1
-print("your age is:" + str(age))
+age += 1  # Corrected from age =+ 1
+print(f"Your age is: {age}")  # Output: Your age is: 24
 
-weidth = 95.5
-print (weidth)
-print ("Hello " + str(weidth) + " cm")
+# Weight declaration and formatting
+weight = 95.5
+print(weight)  # Output: 95.5
+print(f"Hello {weight} cm")  # Output: Hello 95.5 cm
 
-Human = True
-print(type(Human))
+# Boolean variable and type checking
+is_human = True
+print(type(is_human))  # Output: <class 'bool'>
 
+# String operations
 name = "Zen"
-print("My name is",name)
-
-name = "21"
-print("My name is " + (name))
+print("My name is", name)  # Output: My name is Zen
 
 name = "Andree"
-#print (len(name))
-#print (name.find("A"))
-print (name.replace("A", "B"))
+print(name.replace("A", "B"))  # Output: Bndree
 
-print(name*6)
-print(name.format())
+print(name * 6)  # Output: AndreeAndreeAndreeAndreeAndreeAndree
 
+# String formatting with placeholders
 first_name = "Clara"
-last_name = "loro"
+last_name = "Loro"
 age = 24
-print("My name is {} {} and I am {} years old.".format(first_name, last_name, age))
+print(f"My name is {first_name} {last_name} and I am {age} years old.")
+# Output: My name is Clara Loro and I am 24 years old.
 
-print(f"My name is {age} {first_name} and I am {last_name} years old.")
-
-
-class EmptyClass:
-    pass
-
-    x = 10
-    if x > 50:
-    	print("bigger than 50")
-    else:
-    	print("smaller than 50")
-		
+# Input handling and type conversion
 total = 35
 user_val = "26"
-total = total + int(user_val)		# total will be 61
+total = total + int(user_val)  # total becomes 61
+print(total)  # Output: 61
 
-print(len('Coding Dojo'))	# output: 11
+# String length calculation
+print(len('Coding Dojo'))  # Output: 11
 
-print("Hello World!")
-
-name = "Noelle"
-print("Hello" , name)
-
-name = 42
-print("Hello" , str(name))
-
+# Fave food concatenation
 fave_food1 = "sushi"
 fave_food2 = "pizza"
+print(f"I love to eat {fave_food1} and {fave_food2}")
+# Output: I love to eat sushi and pizza
 
-print (f"i love to eat {fave_food1} and {fave_food2}")
-print ("i love to eat {} and {}".format(fave_food1, fave_food2))
-
+# Intro message with fave foods
 intro = "I love eating in general especially"
-fave_food3 = "flafel"
-fave_food4 = "Shawema"
+fave_food3 = "falafel"
+fave_food4 = "shawarma"
 print(f"{intro} {fave_food3} {fave_food4}")
+# Output: I love eating in general especially falafel shawarma

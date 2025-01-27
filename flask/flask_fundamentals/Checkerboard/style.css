@@ -1,0 +1,30 @@
+*{
+    background-color:rgb(42, 36, 82);
+    text-align: center;
+    /* outline: 1px dotted red; */
+}
+
+.container{
+    margin: 0 auto;
+}
+
+table{
+    margin-left: 10px;
+}
+
+h1{
+    color: whitesmoke
+}
+td{
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+}
+
+.color1{
+    background-color:black
+}
+
+.color2{
+    background-color:blanchedalmond
+}

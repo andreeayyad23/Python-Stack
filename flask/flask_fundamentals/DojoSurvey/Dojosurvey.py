@@ -8,7 +8,7 @@ app.secret_key="AndreeMajed"
 def index():
     return render_template("index.html")
 
-@app.route('/process', methods=['POST'])
+@app.route('/result', methods=['POST'])
 def create_user():
     session['username'] = request.form['name']
     session['userlocation'] = request.form['location']

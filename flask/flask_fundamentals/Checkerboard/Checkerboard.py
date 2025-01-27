@@ -1,17 +1,17 @@
 from flask import Flask, render_template
 app = Flask(__name__)
+@app.route('/play')
+def index():
 
-@app.route('/')
-def default():
-    return render_template("index.html", x = 8, y = 8)
+    return render_template("index.html", num = 3, color = "blue")
 
-@app.route('/<int:x>')
-def half(x):
-    return render_template("index.html", x = x, y = 8)
+@app.route('/play/<x>')
+def play(x):
+    return render_template("index.html", num = int(x), color = "blue")
 
-@app.route('/<int:x>/<int:y>')
-def checkerboard(x,y):
-    return render_template("index.html", x = x, y = y)
+@app.route('/play/<x>/<color>')
+def color(x, color):
+    return render_template("index.html", num = int(x), color = color)
 
-if __name__ == "__main__":
+if __name__=="__main__":
     app.run(debug=True)
