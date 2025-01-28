@@ -54,6 +54,49 @@ These tasks involve significant computation but are secondary to the I/O operati
 
 ---
 
+# Scaling Out the Application
+
+To scale the application across multiple servers or containers, use a **distributed task queue system** like **Celery** with **Redis** or **RabbitMQ** as the message broker.
+
+---
+
+## Steps to Scale Out
+
+1. **Task Distribution**  
+   - Break workload into smaller tasks (e.g., process a single URL).  
+   - Use a task queue to distribute tasks to worker nodes.
+
+2. **Worker Nodes**  
+   - Each worker processes tasks independently:  
+     - Downloads pages.  
+     - Counts word occurrences.  
+     - Extracts new links.  
+   - Workers send results (word counts, new links) to a central aggregator.
+
+3. **Central Aggregator**  
+   - Aggregates results from workers.  
+   - Maintains shared state (e.g., visited URLs, word counts) using **Redis**.
+
+4. **Fault Tolerance**  
+   - Retry failed tasks.  
+   - Ensure tasks are idempotent (processing the same URL multiple times doesn’t affect results).
+
+5. **Scaling**  
+   - Add more worker nodes to handle increased load.  
+   - Use **Kubernetes** or **Docker Swarm** to manage and scale worker containers dynamically.
+
+---
+
+## Key Components
+
+- **Celery**: Distributed task management.  
+- **Redis**: Task queuing and shared state (visited URLs, word counts).  
+- **Flask**: Web interface and task coordination.  
+
+---
+
+This approach enables **horizontal scaling** across multiple servers or containers.
+
 ## How to Run
 1. Clone this repository:
    ```bash
