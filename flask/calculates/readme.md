@@ -122,6 +122,3 @@ This approach enables **horizontal scaling** across multiple servers or containe
    ```
 
 5. Open your browser and navigate to `http://127.0.0.1:5000`.
-
----
-```
