@@ -95,19 +95,10 @@ To scale the application across multiple servers or containers, use a **distribu
 
 ---
 
+![Algorithm for Task](images/algo_for_task.png)
+
 This approach enables **horizontal scaling** across multiple servers or containers.
 
-+-------------------+       +-------------------+       +-------------------+
-|   Flask Web App   |       |   Task Queue      |       |   Celery Workers  |
-| (Task Submission) | ----> | (Redis/RabbitMQ)  | ----> | (Task Processing) |
-+-------------------+       +-------------------+       +-------------------+
-        |                           |                           |
-        |                           |                           |
-        v                           v                           v
-+-------------------+       +-------------------+       +-------------------+
-|   Central Aggregator | <--- |   Redis (Shared State) | <--- |   Results (Word Counts, Links) |
-| (Flask + Redis)    |       | (Visited URLs, Counts) |       |   (Sent by Workers)           |
-+-------------------+       +-------------------+       +-------------------+
 
 ## How to Run
 1. Clone this repository:
@@ -133,5 +124,4 @@ This approach enables **horizontal scaling** across multiple servers or containe
 5. Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ---
-
-
+```
