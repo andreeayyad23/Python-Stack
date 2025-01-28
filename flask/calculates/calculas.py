@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 from typing import Set, List
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key_here"  
+app.secret_key = "for_management"  
 
 def download_page(url: str) -> str:
     try:
@@ -17,15 +17,14 @@ def download_page(url: str) -> str:
         print(f"Error downloading {url}: {e}")
         return None
 
-def count_word_occurrences(page: str, word: str) -> int:
-
-    soup = BeautifulSoup(page, "html.parser")
-    for script_or_style in soup(["script", "style"]):
-        script_or_style.decompose()
-    text = soup.get_text(separator=" ")
-    text = re.sub(r"\s+", " ", text).strip()
-    word_pattern = re.compile(rf"\b{re.escape(word)}\b", re.IGNORECASE)
-    matches = word_pattern.findall(text)
+def count_word_occurrences(html_content: str, target_word: str) -> int:
+    soup = BeautifulSoup(html_content, "html.parser")
+    for element in soup(["script", "style"]):
+        element.decompose()
+    text_content = soup.get_text(separator=" ")
+    text_content = re.sub(r"\s+", " ", text_content).strip()
+    word_regex = re.compile(rf"\b{re.escape(target_word)}\b", re.IGNORECASE)
+    matches = word_regex.findall(text_content)
     return len(matches)
 
 def get_links_in_page(page: str, base_url: str) -> Set[str]:
@@ -36,25 +35,23 @@ def get_links_in_page(page: str, base_url: str) -> Set[str]:
         links.add(link)
     return links
 
-def process_page(url: str, word: str, visited_urls: Set[str], total_occurrences: List[int], max_pages: int = 100) -> None:
+def process_page(
+    url: str, target_word: str, visited_urls: Set[str], occurrence_count: List[int], max_pages: int = 100) -> None:
     if len(visited_urls) >= max_pages:
         return
     if url in visited_urls:
         return
     visited_urls.add(url)
 
-    print(f"Processing: {url}")
     html_content = download_page(url)
     if not html_content:
         return
 
-    occurrences = count_word_occurrences(html_content, word)
-    total_occurrences[0] += occurrences
-    print(f"Occurrences of '{word}' in {url}: {occurrences}")
+    occurrence_count[0] += count_word_occurrences(html_content, target_word)
 
     links = get_links_in_page(html_content, url)
     for link in links:
-        process_page(link, word, visited_urls, total_occurrences, max_pages)
+        process_page(link, target_word, visited_urls, occurrence_count, max_pages)
 
 @app.route("/", methods=["GET", "POST"])
 def step1():
