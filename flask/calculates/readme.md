@@ -97,6 +97,18 @@ To scale the application across multiple servers or containers, use a **distribu
 
 This approach enables **horizontal scaling** across multiple servers or containers.
 
++-------------------+       +-------------------+       +-------------------+
+|   Flask Web App   |       |   Task Queue      |       |   Celery Workers  |
+| (Task Submission) | ----> | (Redis/RabbitMQ)  | ----> | (Task Processing) |
++-------------------+       +-------------------+       +-------------------+
+        |                           |                           |
+        |                           |                           |
+        v                           v                           v
++-------------------+       +-------------------+       +-------------------+
+|   Central Aggregator | <--- |   Redis (Shared State) | <--- |   Results (Word Counts, Links) |
+| (Flask + Redis)    |       | (Visited URLs, Counts) |       |   (Sent by Workers)           |
++-------------------+       +-------------------+       +-------------------+
+
 ## How to Run
 1. Clone this repository:
    ```bash
